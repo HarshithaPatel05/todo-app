@@ -30,13 +30,21 @@ function TodoApp() {
   };
 
   return (
-    <div>
+    <div className="container">
+      <h1>📝 Todo App</h1>
+
       <TodoInput addTodo={addTodo} />
+
       <TodoList
         todos={todos}
         deleteTodo={deleteTodo}
         toggleComplete={toggleComplete}
       />
+
+      <div className="stats">
+        Total: {todos.length} | Completed:{" "}
+        {todos.filter((t) => t.completed).length}
+      </div>
     </div>
   );
 }

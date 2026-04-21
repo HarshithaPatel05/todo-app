@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function TodoInput({ addTodo }) {
-  const [input, setInput] = useState("");
+  const [input, setInput] = React.useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,11 +13,11 @@ function TodoInput({ addTodo }) {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Enter task..."
+        placeholder="Add a new task..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button type="submit">Add</button>
+      <button className="add-btn">Add</button>
     </form>
   );
 }
